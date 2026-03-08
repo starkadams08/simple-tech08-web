@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <tittle>Smart Business Website</tittle>
-        <link rel="stylesheet" href="style.css">
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SmartTech Services</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <h1>Welcome to SmartTech services</h1>
-        <ul>
-            <li>Phone Repair</li>
-            <li>Laptop Repair and Sells</li>
-            <li>Software Installation</li>
-        </ul>
-    </section>
+      <h1>Welcome to SmartTech services</h1>
+      <ul>
+        <li>Phone Repair</li>
+        <li>Laptop Repair and Sales</li>
+        <li>Software Installation</li>
+      </ul>
+    </header>
 
     <section>
-        <h2>Ask Our AI Assistant</h2>
-        <input type="text" id="userinput" placeholder="Ask something...">
-        <button onclick="sendMessage()">Ask</button>
+      <h2>Ask Our AI Assistant</h2>
+      <input type="text" id="userInput" placeholder="Ask something..." />
+      <button type="button" onclick="sendMessage()">Ask</button>
 
-        <div id="chatBox"></div>
+      <div id="chatBox" aria-live="polite"></div>
     </section>
 
     <script src="script.js"></script>
-    
-</body>
+  </body>
 </html>

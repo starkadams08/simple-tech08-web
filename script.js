@@ -1,27 +1,42 @@
-function sendMessage(){
+function sendMessage() {
+  const inputEl = document.getElementById("userInput");
+  const chatBox = document.getElementById("chatBox");
 
-    let input = document.getElementById("userInput").ariaValueMax;
-    let chatBox = document.getElementById("chatBox");
+  if (!inputEl || !chatBox) return;
 
-    let response = "";
+  const input = (inputEl.value || "").trim();
+  if (!input) return;
 
-    if(input.includes("hours")){
-        response = "We are open from 8pm every day.";
-    }
+  const normalized = input.toLowerCase();
 
-    else if(input.includes("location")){
-        response = "We are located in Kampala city center.";
-    }
+  let response = "";
 
-    else if(input.includes("services")){
-        response = "We repair phones, laptops, and install software.";
-    }
+  if (normalized.includes("hours")) {
+    response = "We are open from 8pm every day.";
+  } else if (normalized.includes("location")) {
+    response = "We are located in Kampala city center.";
+  } else if (normalized.includes("services")) {
+    response = "We repair phones, laptops, and install software.";
+  } else {
+    response = "Please contact us on WhatsApp for more details.";
+  }
 
-    else{
-        response = "Please contact us on WhatsApp for more details.";
-    }
+  const userP = document.createElement("p");
+  const aiP = document.createElement("p");
 
-    chatBox.innerHTML += "<p><b>You:</b> " + input + "</p>";
-    chatBox.innerHTML += "<p><b>AI:</b> " + response + "</p>";
+  const userB = document.createElement("b");
+  userB.textContent = "You: ";
+  userP.appendChild(userB);
+  userP.appendChild(document.createTextNode(input));
+
+  const aiB = document.createElement("b");
+  aiB.textContent = "AI: ";
+  aiP.appendChild(aiB);
+  aiP.appendChild(document.createTextNode(response));
+
+  chatBox.appendChild(userP);
+  chatBox.appendChild(aiP);
+
+  inputEl.value = "";
+  inputEl.focus();
 }
-
