@@ -1,0 +1,23 @@
+body{
+    font-family: Arial;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+header{
+    background: #222;
+    color: white;
+    padding: 20px;
+}
+
+section{
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+button{
+    padding: 10px20px;
+    cursor: pointer;
+}
